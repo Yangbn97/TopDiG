@@ -1,0 +1,30 @@
+{
+  "Experiment":{
+    "object_type": "polygon",
+    "save_shp": 1,
+    "save_seg": 0,
+    "evaluate": 0,
+    "eval_only": 0,
+    "dataset_name": "GID",
+    "detection_resume": 1,
+    "match_resume": 1
+  },
+  "Paths": {
+    "TestRoot": "/data02/ybn/Datasets/water/GID/raw/image_RGB",
+    "TestLabelRoot": "/data02/ybn/Datasets/water/GID/raw/water/label",
+    "SaveRoot": "/data02/ybn/Projects/TopDiG/records/GID",
+    "records_filename": "GID",
+    "pretrained_detection_weight_name": "points_best.pkl",
+    "pretrained_match_weight_name": "connection_best.pkl"
+  },
+  "Model": {
+    "NUM_POINTS": 320,
+    "dilate_pixels": 5,
+    "phi": 9,
+    "num_attention_layers": 6,
+    "num_heads": 12,
+    "hidden_dim": 768,
+    "Sinkhorn": 1,
+    "threshold": 0.45
+  }
+}

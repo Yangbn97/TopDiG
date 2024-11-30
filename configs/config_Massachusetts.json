@@ -1,0 +1,30 @@
+{
+  "Experiment":{
+    "object_type": "line",
+    "save_shp": 1,
+    "save_seg": 0,
+    "evaluate": 0,
+    "eval_only": 0,
+    "dataset_name": "Massachusetts",
+    "detection_resume": 1,
+    "match_resume": 1
+  },
+  "Paths": {
+    "TestRoot":"/data02/ybn/Datasets/Road/Massachusetts/raw/test/img",
+    "TestLabelRoot": "/data02/ybn/Datasets/Road/Massachusetts/raw/test/label",
+    "SaveRoot": "/data02/ybn/Projects/TopDiG/records/Massachusetts",
+    "records_filename": "Massachusetts",
+    "pretrained_detection_weight_name": "points_best.pkl",
+    "pretrained_match_weight_name": "connection_best.pkl"
+  },
+  "Model": {
+    "NUM_POINTS": 256,
+    "dilate_pixels": 5,
+    "phi": 5,
+    "num_attention_layers": 6,
+    "num_heads": 12,
+    "hidden_dim": 768,
+    "Sinkhorn": 0,
+    "threshold": 0.6
+  }
+}

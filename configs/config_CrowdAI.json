@@ -1,0 +1,30 @@
+{
+  "Experiment":{
+    "object_type": "poly",
+    "test": 0,
+    "evaluate": 1,
+    "dataset_name": "CrowdAI",
+    "detection_resume": 1,
+    "match_resume": 1
+  },
+  "Paths": {
+    "ValRoot": "/data01/ybn/Datasets/Building_Dateset/mapchallenge/val_small",
+    "TestRoot": "/data01/ybn/Datasets/Building_Dateset/mapchallenge/val_small/image",
+    "records_filename": "CrowdAI",
+    "pretrained_detection_weight_name": "points_best.pkl",
+    "pretrained_match_weight_name": "connection_best.pkl"
+  },
+  "Hyper": {
+    "batch_size": 16,
+    "num_workers": 8
+  },
+  "Model": {
+    "NUM_POINTS": 448,
+    "dilate_pixels": 5,
+    "phi": 3,
+    "num_attention_layers": 6,
+    "num_heads": 12,
+    "hidden_dim": 768,
+    "Sinkhorn": 1
+  }
+}

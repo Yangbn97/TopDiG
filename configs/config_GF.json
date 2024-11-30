@@ -1,0 +1,45 @@
+{
+  "Experiment":{
+    "object_type": "water",
+    "test": 0,
+    "evaluate": 1,
+    "epoch_num": 100,
+    "dataset_name": "GF2",
+    "detection_resume": 1,
+    "match_resume": 1,
+    "ViT_pretrain": 0,
+    "detection_model_save": 1,
+    "match_model_save": 1
+  },
+  "Paths": {
+    "TrainRoot": "/data02/ybn/Datasets/water/Water_Dataset/GF2_water/water-body-satellite-data/train",
+    "ValRoot": "/data02/ybn/Datasets/water/Water_Dataset/GF2_water/water-body-satellite-data/valid",
+    "TestRoot": "/data02/ybn/Datasets/water/Water_Dataset/GF2_water/water-body-satellite-data/nozero_valid/image",
+    "records_filename": "waterGF_dff_448pt",
+    "pretrained_detection_weight_name": "points_best.pkl",
+    "pretrained_match_weight_name": "connection_best.pkl",
+    "pretrained_ViT_weight_name": "B_16_imagenet1k.pth"
+  },
+  "Hyper": {
+    "batch_size": 16,
+    "num_workers": 8,
+    "lr_detection": 1e-4,
+    "lr_match": 1e-4,
+    "weight_decay_detection": 0,
+    "weight_decay_match": 0,
+    "scheduler_detection": 0,
+    "scheduler_match": 0
+  },
+  "Model": {
+    "detection_model": "DFF",
+    "NUM_POINTS": 448,
+    "dilate_pixels": 5,
+    "phi": 10,
+    "delta": 10,
+    "num_attention_layers": 6,
+    "num_heads": 12,
+    "hidden_dim": 768,
+    "Sinkhorn": 1,
+    "threshold": 0.45
+  }
+}
