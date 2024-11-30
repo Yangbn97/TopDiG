@@ -1,7 +1,11 @@
 This is the Inference code of CVPR2023 paper ["TopDiG: Class-agnostic Topological Directional Graph Extraction from Remote Sensing Images"](https://openaccess.thecvf.com/content/CVPR2023/html/Yang_TopDiG_Class-Agnostic_Topological_Directional_Graph_Extraction_From_Remote_Sensing_Images_CVPR_2023_paper.html)
 
-1、Start datasets
+1、Start
 =
+* Setting the environment by command:
+```python
+pip install requirements.txt
+```
 * Set the config file in /configs
 *  specify config file in the main.py
 *  run
