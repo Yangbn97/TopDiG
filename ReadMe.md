@@ -1,14 +1,10 @@
 This is the Inference code of CVPR2023 paper ["TopDiG: Class-agnostic Topological Directional Graph Extraction from Remote Sensing Images"](https://openaccess.thecvf.com/content/CVPR2023/html/Yang_TopDiG_Class-Agnostic_Topological_Directional_Graph_Extraction_From_Remote_Sensing_Images_CVPR_2023_paper.html)
 
-1、Switch datasets
+1、Start datasets
 =
-specify config file in the main.py
+Firstly set the config file in /configs and then specify config file in the main.py. Finnally run python main.py
 
-2、Start command
-=
-python main.py
-
-3、Parameters in config files
+2、Parameters in config files
 =
 Experiment：
 	object_type: when set as 'line'，extract centerline, otherwise extracting contours
@@ -35,14 +31,14 @@ Model：
 	num_attention_layers，num_heads， hidden_dim：ViT layer number、head number and hidden dimensions
 	Sinkhorn：whether to conduct Sinkhorn. True for polygon shape objects; Flase for line shape objects
 
-4、Datasets dictionary
+3、Datasets dictionary
 =
 examples for datasets with label:
 "TestRoot": "/data02/ybn/Datasets/Building/Inria/raw/train/image",
 "TestLabelRoot": "/data02/ybn/Datasets/Building/Inria/raw/train/binary_map",
 If no accuracy evaluate step, this script can run without labels. In this case, set evaluate=0
 
-5、Pretrained checkpoints
+4、Pretrained checkpoints
 =
 Google drive:https://drive.google.com/drive/folders/1E3jNSO8CGl_72V1rq38a-aagGEFL7S6c?usp=drive_link
 Baidu drive:https://pan.baidu.com/s/1EddQLzkyWCoqZVFIxIuuAQ (password:yqxa) 
