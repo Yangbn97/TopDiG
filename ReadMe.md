@@ -21,7 +21,7 @@ Experiment:<br>
 	detection_resume：whether to load TCND checkpoints<br>
 	match_resume：whether to load DiG generator checkpoints<br>
 <br>
-Paths:\<br>
+Paths:<br>
 	TestRoot：image path<br>
 	TestLabelRoot：label path<br>
 	SaveRoot：path to save results<br>
@@ -41,7 +41,7 @@ Model:<br>
 =
 examples for datasets with label:
 -
-"TestRoot": "/data02/ybn/Datasets/Building/Inria/raw/train/image",
+"TestRoot": "/data02/ybn/Datasets/Building/Inria/raw/train/image"<br>
 "TestLabelRoot": "/data02/ybn/Datasets/Building/Inria/raw/train/binary_map"
 
 If no accuracy evaluate step, this script can run without labels. In this case, set evaluate=0
