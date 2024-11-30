@@ -48,12 +48,12 @@ python main.py
 "TestRoot": "/data02/ybn/Datasets/Building/Inria/raw/train/image"<br>
 "TestLabelRoot": "/data02/ybn/Datasets/Building/Inria/raw/train/binary_map"
 
-If no accuracy evaluate step, this script can run without labels. In this case, set evaluate=0
+If no accuracy evaluation step, this script can run without labels. In this case, set evaluate=0
 
 4、Pretrained checkpoints
 =
-Google drive:https://drive.google.com/drive/folders/1E3jNSO8CGl_72V1rq38a-aagGEFL7S6c?usp=drive_link<br>
-Baidu drive:https://pan.baidu.com/s/1EddQLzkyWCoqZVFIxIuuAQ (password:yqxa) <br>
+**Google drive**:https://drive.google.com/drive/folders/1E3jNSO8CGl_72V1rq38a-aagGEFL7S6c?usp=drive_link<br>
+**Baidu drive**:https://pan.baidu.com/s/1EddQLzkyWCoqZVFIxIuuAQ (password:yqxa) <br>
 The downloaded contents are /records/ which contains checkpoints for Inria, GID and Massachusetts. It should be downloaded to root path (./)
 
 
