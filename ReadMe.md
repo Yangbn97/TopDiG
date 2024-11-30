@@ -11,30 +11,30 @@ python main.py
 
 2、Parameters in config files
 =
-Experiment：
-	object_type: when set as 'line'，extract centerline, otherwise extracting contours
-	save_shp：whether to save results as shapefile. The default is True
-	save_seg：whether to save results as binary mask
-	evaluate：whether to calculate accuracy metrics. If True, the script will firstly saves results as binary mask to SaveRoot and then calculate metrics.
-	dataset_name：dataset name
-	detection_resume：whether to load TCND checkpoints
-	match_resume：whether to load DiG generator checkpoints
+Experiment:\br
+	>object_type: when set as 'line'，extract centerline, otherwise extracting contours\br
+	>save_shp：whether to save results as shapefile. The default is True\br
+	>save_seg：whether to save results as binary mask\br
+	>evaluate：whether to calculate accuracy metrics. If True, the script will firstly saves results as binary mask to SaveRoot and then calculate metrics.\br
+	>dataset_name：dataset name\br
+	>detection_resume：whether to load TCND checkpoints\br
+	>match_resume：whether to load DiG generator checkpoints\br
+\br
+Paths:\br
+	>TestRoot：image path\br
+	>TestLabelRoot：label path\br
+	>SaveRoot：path to save results\br
+	>records_filename：save intermedia outputs\br
+	>pretrained_detection_weight_name: basename of TCND ckecpoint file\br
+	>pretrained_match_weight_name: basename of DiG generator checkpoint file\br
 
-Paths:
-	TestRoot：image path.
-	TestLabelRoot：label path
-	SaveRoot：path to save results
-	records_filename：save intermedia outputs
-	pretrained_detection_weight_name: basename of TCND ckecpoint file
-	pretrained_match_weight_name: basename of DiG generator checkpoint file
-
-Model：
-	NUM_POINTS：the total number of detected nodes per image
-	dilate_pixels：for evaluate boundary IoU
-	phi：distance among detected nodes
-	delta：tolarence when match detected and GT nodes
-	num_attention_layers，num_heads， hidden_dim：ViT layer number、head number and hidden dimensions
-	Sinkhorn：whether to conduct Sinkhorn. True for polygon shape objects; Flase for line shape objects
+Model:\br
+	>NUM_POINTS：the total number of detected nodes per image\br
+	>dilate_pixels：for evaluate boundary IoU\br
+	>phi：distance among detected nodes\br
+	>delta：tolarence when match detected and GT nodes\br
+	>num_attention_layers，num_heads， hidden_dim：ViT layer number、head number and hidden dimensions\br
+	>Sinkhorn：whether to conduct Sinkhorn. True for polygon shape objects; Flase for line shape objects\br
 
 3、Datasets dictionary
 =
