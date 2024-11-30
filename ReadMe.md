@@ -2,7 +2,12 @@ This is the Inference code of CVPR2023 paper ["TopDiG: Class-agnostic Topologica
 
 1、Start datasets
 =
-Firstly set the config file in /configs and then specify config file in the main.py. Finnally run python main.py
+* Set the config file in /configs
+*  specify config file in the main.py
+*  run
+  ```python 
+python main.py
+```
 
 2、Parameters in config files
 =
