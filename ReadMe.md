@@ -1,8 +1,12 @@
-This is the Inference code of CVPR2023 paper "TopDiG: Class-agnostic Topological Directional Graph Extraction from Remote Sensing Images"[link](https://openaccess.thecvf.com/content/CVPR2023/html/Yang_TopDiG_Class-Agnostic_Topological_Directional_Graph_Extraction_From_Remote_Sensing_Images_CVPR_2023_paper.html)
+This is the Inference code of CVPR2023 paper ["TopDiG: Class-agnostic Topological Directional Graph Extraction from Remote Sensing Images"](https://openaccess.thecvf.com/content/CVPR2023/html/Yang_TopDiG_Class-Agnostic_Topological_Directional_Graph_Extraction_From_Remote_Sensing_Images_CVPR_2023_paper.html)
 
-1、Switch datasets：specify config file in the main.py
+1、Switch datasets：
+=
+specify config file in the main.py
 
-2、Start command：python main.py
+2、Start command：
+=
+python main.py
 
 3、Parameters in config files：
 Experiment：
@@ -15,7 +19,7 @@ Experiment：
 	match_resume：whether to load DiG generator checkpoints
 
 Paths:
-	TestRoot：image path.对于有raster label的数据，目录下应包含/image和/binary_map两个子目录，对于coco格式（如CrowdAI）， 根目录下应包含/image和annotation.json
+	TestRoot：image path.
 	TestLabelRoot：label path
 	SaveRoot：path to save results
 	records_filename：save intermedia outputs
