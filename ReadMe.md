@@ -17,13 +17,13 @@ python main.py
 2、Parameters in config files
 =
 **Experiment**:<br>
-	>>>>object_type: when set as 'line'，extract centerline, otherwise extracting contours<br>
-	>>save_shp：whether to save results as shapefile. The default is True<br>
-	>>save_seg：whether to save results as binary mask<br>
-	>>evaluate：whether to calculate accuracy metrics. If True, the script will firstly saves results as binary mask to SaveRoot and then calculate metrics.<br>
-	>>dataset_name：dataset name<br>
-	>>detection_resume：whether to load TCND checkpoints<br>
-	>>match_resume：whether to load DiG generator checkpoints<br>
+	>>***object_type**: when set as 'line'，extract centerline, otherwise extracting contours<br>
+	>>**save_shp**：whether to save results as shapefile. The default is True<br>
+	>>**save_seg**：whether to save results as binary mask<br>
+	>>**evaluate**：whether to calculate accuracy metrics. If True, the script will firstly saves results as binary mask to SaveRoot and then calculate metrics.<br>
+	>>**dataset_name**：dataset name<br>
+	>>**detection_resume**：whether to load TCND checkpoints<br>
+	>>**match_resume**：whether to load DiG generator checkpoints<br>
 <br>
 **Paths**:<br>
 	>>TestRoot：image path<br>
