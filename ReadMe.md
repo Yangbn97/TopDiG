@@ -43,8 +43,8 @@ python main.py
 
 3、Datasets dictionary
 =
-examples for datasets with label:
--
+**Examples for datasets with label**:<br>
+
 "TestRoot": "/data02/ybn/Datasets/Building/Inria/raw/train/image"<br>
 "TestLabelRoot": "/data02/ybn/Datasets/Building/Inria/raw/train/binary_map"
 
