@@ -1,20 +1,44 @@
-This is the Inference code of CVPR2023 paper ["TopDiG: Class-agnostic Topological Directional Graph Extraction from Remote Sensing Images"](https://openaccess.thecvf.com/content/CVPR2023/html/Yang_TopDiG_Class-Agnostic_Topological_Directional_Graph_Extraction_From_Remote_Sensing_Images_CVPR_2023_paper.html)
+# TopDiG: Class-agnostic Topological Directional Graph Extraction from Remote Sensing Images
 
-1、Start
+This repository contains the official implementation of CVPR2023 paper ["TopDiG: Class-agnostic Topological Directional Graph Extraction from Remote Sensing Images"](https://openaccess.thecvf.com/content/CVPR2023/html/Yang_TopDiG_Class-Agnostic_Topological_Directional_Graph_Extraction_From_Remote_Sensing_Images_CVPR_2023_paper.html)
+
+## New
+[2025/09/10] The training script is released.
+
+
+1、Environment Setting
 =
 * Setting the environment by command:
 ```python
 pip install requirements.txt
 ```
-* Set the config file in /configs
-*  specify config file in the main.py
-*  run
+
+2、Training
+=
+* Set the config file in /configs and specify config file in the main.py/main_ddp.py. Change ["Model"]["detection_model"] to select different node detection models. The supported models include TCND (standard in this paper), TCSwin (from ["UniVecMapper"](https://www.sciencedirect.com/science/article/pii/S1569843224002693)) and FPN.
+* Phase 1: Train node detection network.
+  - In config file, set "pretrain" as 1
+  - Run:   
+	```python 
+	python main.py
+	```
+* Phase 2: Train the entire TopDiG:
+  - In config file, set all parameters from "pretrain" to "evaluate" as 0. specify "Paths":{"pretrained_detection_weight_path"}
+  - Run:
+  	```python 
+	python main.py
+	```
+
+3、Inference:
+=
+* In config file, set "pretrain" as 0 while "infer_eval" as 1 to conduct inference and accuracy calculation. Specify "Paths":{"pretrained_detection_weight_path", "pretrained_match_weight_path"};
+* Run:
   ```python 
-python main.py
-```
+	python main.py
+	```
 
 
-2、Parameters in config files
+4、Parameters in config files
 =
 **Experiment**:<br>
 	>>object_type: when set as 'line'，extract centerline, otherwise extracting contours<br>
@@ -26,6 +50,8 @@ python main.py
 	>>**match_resume**：whether to load DiG generator checkpoints<br>
 <br>
 **Paths**:<br>
+	>>**TrainRoot**：Trainset path<br>
+	>>**ValRoot**：Validset path<br>
 	>>**TestRoot**：image path<br>
 	>>**TestLabelRoot**：label path<br>
 	>>**SaveRoot**：path to save results<br>
@@ -38,23 +64,30 @@ python main.py
 	>>dilate_pixels：for evaluate boundary IoU<br>
 	>>phi：distance among detected nodes<br>
 	>>delta：tolarence when match detected and GT nodes<br>
-	>>num_attention_layers，num_heads， hidden_dim：ViT layer number、head number and hidden dimensions<br>
+	>>num_attention_layers，num_heads， hidden_dim：ViT layer number、head number and hidden dimensions. Recommand 12, 12, 768.<br>
 	>>Sinkhorn：whether to conduct Sinkhorn. True for polygon shape objects; Flase for line shape objects<br>
 
 3、Datasets dictionary
 =
 **Examples for datasets with label**:<br>
+"TrainRoot": /data02/ybn/Datasets/Building/Inria/train <br>
+"TestRoot": /data02/ybn/Datasets/Building/Inria/valid/image<br>
+"TestLabelRoot": /data02/ybn/Datasets/Building/Inria/valid/binary_map
 
-"TestRoot": "/data02/ybn/Datasets/Building/Inria/raw/train/image"<br>
-"TestLabelRoot": "/data02/ybn/Datasets/Building/Inria/raw/train/binary_map"
-
-If no accuracy evaluation step, this script can run without labels. In this case, set evaluate=0
+If no accuracy evaluation step, this script can run without labels. In this case, set infer=1, infer_eval=0, evaluate=0
 
 4、Pretrained checkpoints
 =
 **Google drive**:https://drive.google.com/drive/folders/1E3jNSO8CGl_72V1rq38a-aagGEFL7S6c?usp=drive_link<br>
 **Baidu drive**:https://pan.baidu.com/s/1EddQLzkyWCoqZVFIxIuuAQ (password:yqxa) <br>
 The downloaded contents are /records/ which contains checkpoints for Inria, GID and Massachusetts. It should be downloaded to root path (./)
+
+## Contact
+For any inquiries regarding this work, please contact:
+
+* bingnan.yang@whu.edu.cn
+
+  
 
 
 
