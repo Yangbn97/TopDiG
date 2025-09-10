@@ -1,0 +1,66 @@
+{
+  "Experiment":{
+    "object_type": "water",
+    "pretrain": 0,
+    "infer": 0,
+    "infer_eval": 0,
+    "save_shp": 0,
+    "save_seg": 0,
+    "evaluate": 0,
+    "epoch_num": 100,
+    "dataset_name": "GID",
+    "detection_resume": 1,
+    "match_resume": 1,
+    "ViT_pretrain": 1,
+    "detection_model_save": 1,
+    "match_model_save": 1
+  },
+  "Paths": {
+    "TrainRoot": "/root/autodl-tmp/Datasets/GID/train",
+    "ValRoot": "/root/autodl-tmp/Datasets/GID/valid",
+    "TestRoot": "/root/autodl-tmp/Datasets/GID/valid/image",
+    "TestLabelRoot": "/root/autodl-tmp/Datasets/GID/valid/binary_map",
+    "SaveRoot": "/root/autodl-tmp/Projects/TopDiG/records/GID",
+    "records_filename": "GID_TCND_320pt_bs16_L12H12",
+    "pretrained_Swin_weight_path":"/root/autodl-tmp/Projects/checkpoints/swin_b-68c6b09e.pth",
+    "pretrained_ViT_weight_path": "/root/autodl-tmp/Projects/checkpoints/B_16.pth",
+    "pretrained_detection_weight_path": "/root/autodl-tmp/Projects/checkpoints/TopDiG/GID/points_best.pkl",
+    "pretrained_match_weight_path": "/root/autodl-tmp/Projects/checkpoints/TopDiG/GID/connection_best.pkl"
+  },
+  "Hyper": {
+    "batch_size": 16,
+    "num_workers": 8,
+    "lr_detection": 1e-4,
+    "lr_match": 1e-4,
+    "weight_decay_detection": 0,
+    "weight_decay_match": 0,
+    "scheduler_detection": 0,
+    "scheduler_match": 0
+  },
+  "Model": {
+    "detection_model": "TCND",
+    "NUM_POINTS": 320,
+    "input_img_size": 512,
+    "overlap_stride": 100,
+    "dilate_pixels": 5,
+    "phi": 10,
+    "delta": 10,
+    "num_attention_layers": 12,
+    "num_heads": 12,
+    "hidden_dim": 768,
+    "Sinkhorn": 1,
+    "threshold": 0.45,
+    "deep_supervision": 1,
+    "show_outputs": 1
+  },
+  "DDP":{
+    "flag":1,
+    "dist_url":"tcp://localhost:3681",
+    "dist_backend":"nccl",
+    "multiprocessing_distributed":1,
+    "world_size":1,
+    "rank":0,
+    "sync_bn":1
+
+  }
+}
